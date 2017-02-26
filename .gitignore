@@ -1,0 +1,4 @@
+*.conf
+rtmbot.log
+venv/
+.idea/
