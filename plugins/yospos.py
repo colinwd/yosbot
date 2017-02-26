@@ -10,7 +10,9 @@ class WeatherPlugin(Plugin):
         Store users and most recent queries in a hash table for 'default' lookup
         Check hash table for key of query to support looking up another user's weather
     """
-    dark_sky_key = configparser.ConfigParser()['default']['DarkSkyKey']
+    config = configparser.ConfigParser()
+    config.read('weather.conf')
+    dark_sky_key = config['default']['DarkSkyKey']
 
     def process_message(self, msg):
         if check_message(msg):
