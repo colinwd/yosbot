@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 from rtmbot.core import Plugin
 import requests
 import json
@@ -27,11 +30,8 @@ class WeatherPlugin(Plugin):
             self.dark_sky_key, coords['lat'], coords['lon']),
             params={'units': 'si'})
         response = json.loads(r.text)
-        message = "Current weather in " + coords['display_name'] + "\n"
-        message += "Temperature: " + str(response['currently']['temperature']) + "C\n"
-        message += response['currently']['summary']
-        return message
-
+        message = format_weather_message(coords['display_name'], str(response['currently']['temperature']), response['currently']['summary'])
+        return json.dumps(message)
 
 def get_coordinates(loc):
     r = requests.get('http://nominatim.openstreetmap.org/search/' + loc,
@@ -39,6 +39,38 @@ def get_coordinates(loc):
     response = json.loads(r.text)
     return {'lat': response[0]['lat'], 'lon': response[0]['lon'], 'display_name': response[0]['display_name']}
 
-
 def check_message(msg):
     return msg['text'].startswith('.wea')
+
+def c_to_f(temp):
+    return format((float(temp) * 1.8) + 32, '.1f')
+
+def format_weather_message(loc_string, temp_string, summary_string):
+    response = {
+        'attachments': [
+            {
+                'fallback': "Weather in {0} - {1}°C / {2}°F".format(loc_string, temp_string, c_to_f(temp_string)),
+                'pretext': "I found some weather, y'all...",
+                'color': '#57FF57',
+                'text': "Current weather for {0}".format(loc_string),
+                'fields': [
+                    {
+                        'title': "Celcius",
+                        'value': "{0}".format(temp_string),
+                        'short': True
+                    },
+                    {
+                        'title': "Farenheit",
+                        'value': "{0}".format(c_to_f(temp_string)),
+                        'short': True
+                    },
+                    {
+                        'title': "Summary",
+                        'value': "{0}".format(summary_string),
+                        'short': False
+                    }
+                ]
+            }
+        ]
+    }
+    return response
