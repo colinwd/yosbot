@@ -2,6 +2,6 @@
 rtmbot.log
 venv/
 .idea/
-
+plugins/*.pyc
 __pycache__/
 .cache/
