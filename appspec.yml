@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+  destination: /yosbot
+hooks:
+  ApplicationStop:
+    - location: scripts/cleanup.sh
+  BeforeInstall:
+    - location: scripts/venv.sh
+  AfterInstall:
+    - location: scripts/start.sh
