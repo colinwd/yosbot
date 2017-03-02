@@ -16,3 +16,4 @@ deploy:
   deployment_group: yosbot-dg
   on:
     branch: master
+  wait-until-deployed: true
