@@ -4,7 +4,6 @@ python:
 - '3.6'
 install: pip install -r requirements.txt
 before_deploy:
-- cd ..
 - zip -r latest.zip . || true
 - mkdir -p upload
 - mv latest.zip upload/latest.zip || true
