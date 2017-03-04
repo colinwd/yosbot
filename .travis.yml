@@ -6,7 +6,7 @@ install: pip install -r requirements.txt
 after_success: zip -r latest.zip
 before_deploy:
 - mkdir -p upload
-- mv yosbot.zip upload/latest.zip
+- mv latest.zip upload/latest.zip
 script: pytest
 
 deploy:
