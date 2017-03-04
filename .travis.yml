@@ -18,6 +18,7 @@ deploy:
     local_dir: upload
     bucket: yosbot
     region: us-west-2
+    skip_cleanup: true
   - provider: codedeploy
     access_key_id:
       secure: KvRepiAN0CK/xHTZh3I27cLVJmVR0lWozUhZ7vD8Prc1CWCNG2etgIpYqyjDerC2CDci8Y2JzJb4Afi6msaSVyI5rcqS0z9fBOHhUB1lJtKKSuvmU20lWHWZ3PK36ZYMQr+iYM5+7ElAAR3OOomzLD7lIDBf/XcmwX05neDN1XA2VhZQLYNNsfzogGjAOqNqg7TVGYUtV3Dqcz4VspyUjoxdKiEJM5c0gwo3BwXl6Vy4LRyMx75qA8Yx+QuJUlKIkxn5xW8jhiSLlAKZ0YUA24Mpste/t0foKt1RBcLl3NeF2jM2d6xkYk7U9Co7brUse8n2W/NSjAj1LS+zKDZSwgh8KzmX5bQrcWxLlMDlDujJcqN16YnMNHi+PqfgVir0Hpo8/e4aB9Ig6lVdRLicQNvZPe3vjGLKEgiOp4FiWoQQaF+eMWbbXCSXVEYh61S1qFKCrRgagR6ti3Ozmkpck3sFdeeyIXImQaHRUAQvD0JNRGq4D49guVYaS6K7HUAkgueW9eHCI3uW2cZOIYcb2hQH3YHvOxvswf6MLO5KCj2Xbdr+HKQ370iiFns/TnxWh3bDQl6HvoMtaWAxeXN/BZAeD8r3WH6uikz7oLcUDPIdzvyDV8Tv7KeSfsWUpk+E4imWGQHLBGiOaDRliYEe53lfayUICiZie80ul1sZ9iA=
