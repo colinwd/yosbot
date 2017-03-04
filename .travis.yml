@@ -3,7 +3,7 @@ python:
 - '3.5'
 - '3.6'
 install: pip install -r requirements.txt
-after_success: zip -r latest.zip
+after_success: zip -r latest.zip .
 before_deploy:
 - mkdir -p upload
 - mv latest.zip upload/latest.zip
