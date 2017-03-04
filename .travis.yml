@@ -11,6 +11,7 @@ deploy:
     secret_access_key:
       secure: mZLSwRHjSGO84DiM1hTWUa+NxoBvSuhwLi+CpR4n4Guf8LUk+I2J+vZmJpesT54MosUn3UicHq6lzY1wHHWEE0puIvCcPKArTH/HBhO2TFOZypDlqhJb3ZZi127S2Q3XetF6UTajTbZBdehMgCAFhH1NtKG1OJ158bLY+ZYRZ3B0EUf8ANAW2KefU5ltfYmevZuAM+Ndn2luUT/ubd9KOWbsm1kdwsGyZ8XDWRbHyFCBXesV+SDcYJmG5w9WH4WPGG9NIaXcAJiqzkJ2x4DoYX2CvCY6H+8QmczzDx36w15+US2TOyG1Zr8BF5Lrw4mZviB7RVZ3rrGA2yodGUF0LsuxOw9J1pr+xoagTs1y35hgyw2EP4u3VOrSZho8DOywf6o5yjPw/FkmDBFzjrJP1c5LerBELCvK7clejzcglpb4e0tNeMgEe+2WXtEoFSCdZl8gOkwO7Ht7jsuh9cMzAuJWKTeZ/I/pJ7sM11DX6BuneYVpW3SLGkJu4vOfJopptjOXACpsnyWA1rsnQDlns1WfWnnBVKOoCYcvHOKD5p0OHqKj2UOa0CbbFf+BhMvVDBo3NoFp/zypxymV/udEbZqQhzb1cudDadu3/cD84T0aLYNY+fhp55MMsIHzNFqPmsKRSw8GoVWaAxyLmteN3ZG3QsMsr/WlhD1lRulbfcs=
     bucket: yosbot
+    upload-dir: latest
     region: us-west-2
   - provider: codedeploy
     access_key_id:
