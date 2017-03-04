@@ -1,6 +1,3 @@
-branches:
-  only:
-  - master
 language: python
 python:
 - '3.5'
@@ -33,5 +30,6 @@ deploy:
     application: yosbot
     deployment_group: yosbot-dg
     on:
+      branch: master
       repo: colinwd/yosbot
     wait-until-deployed: true
