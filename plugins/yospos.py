@@ -41,4 +41,4 @@ def get_coordinates(loc):
 
 
 def check_message(msg):
-    return msg['text'].startswith('.wea')
+    return 'text' in msg and msg['text'].startswith('.wea')
